@@ -15,7 +15,7 @@
 <body>
 
 <div class="container1 jumbotron text-center">
-    <h1>You can make your own gallery</h1>
+    <h1>You can choose a gallery by extension and add more pictures</h1>
       <div class="row">
         <nav class="col-md-12 col-md-offset-3">
         <?php session_start();
