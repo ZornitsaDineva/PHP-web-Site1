@@ -1,9 +1,11 @@
 <?php
-if(isset($_POST['logbtn'])){
-    include_once('functions.php');
-    login();
-}else{
-    ?>
+ if (isset($_POST['logbtn'])) {
+     include_once('functions.php');
+     login();
+     
+ } else {
+
+     ?>
 <h3>Login</h3>
 
 <form action="index.php?page=5" method="post" class="col-sm-3 col-md-3 col-lg-3">
@@ -19,5 +21,4 @@ if(isset($_POST['logbtn'])){
      
 </form>
 <?php
-}
-
+ }

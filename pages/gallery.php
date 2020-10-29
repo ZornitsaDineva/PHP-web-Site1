@@ -11,6 +11,9 @@
                 $pos = strrpos($fullname, '.');
                 $ext = substr($fullname, $pos + 1);
                 $ext = strtolower($ext);
+                if ($ext == '') {
+                    continue;
+                }
                 if (!in_array($ext, $ar)) {
                     $ar[] = $ext;
                     echo "<option>" . $ext . "</option>";
@@ -23,18 +26,20 @@
     <input type="submit" name="submit" value="Show Pictures" class="btn btn-primary" />
 </form>
 <br />
+
 <?php
 if (isset($_POST['submit'])) {
-    $ext = $_POST['ext'];
-    $ar = glob($path . "*." . $ext);
-    echo "<div class='panel panelprimary'>";
-    echo '<div class="panel-heading">';
-    echo '<h3 class="panel-title">Gallery content</h3></div>';
-    foreach ($ar as $a) {
-        echo "<a href='" . $a . "'target='_blank'>
-        <img src='" . $a . "'height='100px' border='0'alt='picture' class='img-polaroid'/>
+            $ext = $_POST['ext'];
+            $ar = glob($path . "*." . $ext);
+            echo '<div class="container">';
+            echo '<div class="panel-heading">';
+            echo '<h3 class="panel-title">Gallery content</h3></div>';
+            foreach ($ar as $a) {
+                echo "<a href='" . $a . "'target='_blank'>
+                <div class='myStyle'>
+                <img src='" . $a . "' alt='picture' class='img-thumbnail' >
+                </div>
               </a>";
-    }
-    echo "</div>";
-}
-?>
+            }
+            echo "</div>";
+        }

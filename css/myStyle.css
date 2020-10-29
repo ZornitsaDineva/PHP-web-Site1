@@ -1,0 +1,21 @@
+.myStyle {
+    height:240px;
+	width:240px;
+    background-color:transparent;
+    margin-top:10px;   
+    display: inline-block;
+
+}
+
+.myStyle img {
+    max-height: 240px;
+    max-width: 240px;
+    border-radius: 25px;
+	box-shadow: 2px 4px 8px 3px Gainsboro;
+	margin: 2%;
+	float: left;
+}
+
+.nav li {
+	margin: 10px;
+}

@@ -45,11 +45,11 @@ function login()
     $login = trim($_POST['login']);
     $password = trim($_POST['password']);
     $hashed_password = md5($password);
-
     if (is_login_valid($login, $hashed_password)) {
         $_SESSION['registered_user'] = $login;
         header('Location: index.php?page=1');
     } else {
+        unset($_SESSION['registered_user']);
         header('Location: index.php?page=4&error=1');
     }
 }    
@@ -74,5 +74,11 @@ function is_login_valid($login, $hashed_password)
 
     return false;
 }
+
+function logout(){
+    session_destroy();
+    header('location:index.php?page=1');
+}
+
 
     
