@@ -2,9 +2,7 @@
  if (isset($_POST['logbtn'])) {
      include_once('functions.php');
      login();
-     
  } else {
-
      ?>
 <h3>Login</h3>
 
